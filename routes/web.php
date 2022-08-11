@@ -25,8 +25,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('kategori-artikel','KategoriArtikelController@index');
         Route::get('create/kategori-artikel','KategoriArtikelController@create');
         Route::get('detail/kategori-artikel/{id}','KategoriArtikelController@detail');
-        Route::get('edit/kategori-artikel/{id}','KategoriArtikelController@detail');
-        Route::get('delete/kategori-artikel/{id}','KategoriArtikelController@detail');
+        Route::get('edit/kategori-artikel/{id}','KategoriArtikelController@edit');
+        Route::get('delete/kategori-artikel/{id}','KategoriArtikelController@destroy');
         Route::post('store/kategori-artikel','KategoriArtikelController@store');
         Route::post('update/kategori-artikel','KategoriArtikelController@update');
 });

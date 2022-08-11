@@ -1,6 +1,12 @@
 @extends('tema.content')
 @section('content')
 
+        <div>
+            <a title="Return" href="{{url('kategori-artikel')}}">
+                <i class="fa fa-arrow-left"></i>
+                &nbsp; Back To List Data
+            </a>
+        </div>
 
         <div class="col-sm-12">
             <div class="bg-secondary rounded h-100 p-4">
@@ -13,7 +19,7 @@
                             <input type="text" class="form-control" name="name" id="inputEmail3">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
                 </form>
             </div>
         </div>

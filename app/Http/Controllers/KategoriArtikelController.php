@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Validator;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Crypt;
 use App\Models\KategoriArtikel;
 
 class KategoriArtikelController extends Controller
@@ -44,9 +48,9 @@ class KategoriArtikelController extends Controller
         $save=KategoriArtikel::insertData($request);
 
         if($save){
-            return redirect()->back()->with('message','success save data')->with('message_type','primary');
+            return redirect()->back()->with('message','success save data')->with('message_type','info');
         }else{
-            return redirect()->back()->with('message','failed save data')->with('message_type','danger');
+            return redirect()->back()->with('message','failed save data')->with('message_type','primary');
         }
     }
 
@@ -63,26 +67,18 @@ class KategoriArtikelController extends Controller
             $update=KategoriArtikel::updateData($request);
 
         }else{
-            $validator = Validator::make($request->all(), [
+            $request->validate([
                 'name' => 'required|min:3|unique:kategori_artikel,name',
             ]);
     
-            if ($validator->fails()) {
-                $errors = $validator->errors();
-                return response()->json([
-                    'status'=>false,
-                    'code'  =>400,
-                    'message'=>$errors,
-                ], 200);
-            }
 
             $update=KategoriArtikel::updateData($request);
         }
 
         if($update){
-            return redirect()->back()->with('message','success update data')->with('message_type','primary');
+            return redirect()->back()->with('message','success update data')->with('message_type','info');
         }else{
-            return redirect()->back()->with('message','failed update data')->with('message_type','danger');
+            return redirect()->back()->with('message','failed update data')->with('message_type','primary');
         }
     }
 
@@ -91,9 +87,9 @@ class KategoriArtikelController extends Controller
         $delete = KategoriArtikel::where('id',$id)->delete();
 
         if($delete){
-            return redirect()->back()->with('message','succes delete data')->with('message_type','primary');
+            return redirect()->back()->with('message','succes delete data')->with('message_type','info');
         }else{
-            return redirect()->back()->with('message','failed delete data')->with('message_type','danger');
+            return redirect()->back()->with('message','failed delete data')->with('message_type','primary');
         }
     }
 }

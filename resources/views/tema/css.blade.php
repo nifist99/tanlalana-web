@@ -12,6 +12,7 @@
 
     <!-- Libraries Stylesheet -->
     <link href="{{url('assets/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{url('assets/lib/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet">
     <link href="{{url('assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css')}}" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->

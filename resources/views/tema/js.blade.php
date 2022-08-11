@@ -6,6 +6,7 @@
 <script src="{{url('assets/lib/waypoints/waypoints.min.js')}}"></script>
 <script src="{{url('assets/lib/owlcarousel/owl.carousel.min.js')}}"></script>
 <script src="{{url('assets/lib/tempusdominus/js/moment.min.js')}}"></script>
+<script src="{{url('assets/lib/sweetalert2/sweetalert2.min.js')}}"></script>
 <script src="{{url('assets/lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
 <script src="{{url('assets/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 

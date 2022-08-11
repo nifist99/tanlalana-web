@@ -19,7 +19,7 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle @if($link=='kategori_artikel') active @endif" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Data</a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="{{url('kategori-artikel')}}" class="dropdown-item @if($link=='kategori_artikel') active @endif">Kategori Artikel</a>
+                    <a href="{{url('kategori-artikel')}}" class="dropdown-item" @if($link=='kategori_artikel') style="color: red" @endif>Kategori Artikel</a>
                 </div>
             </div>
         </div>

@@ -29,8 +29,8 @@
                                     <th scope="row">{{$no++}}</th>
                                     <td>{{$row->name}}</td>
                                     <td>
-                                        <a href="" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
-                                        <a href="" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                        <a href="{{url('edit/kategori-artikel/'.Crypt::encryptString($row->id))}}" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+                                        <a href="javascript:void(0)" onclick="hapus({{$row->id}})" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -43,5 +43,29 @@
             </div>
         </div>
 
+@push('js')
+    <script>
+        function hapus(id){
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't delete this data",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#696cff',
+                cancelButtonColor: '#ff3e1d',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    location.href="{{url('delete/kategori-artikel')}}/"+id; 
+                    Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                    )
+                }
+                })
+            }
+    </script>
+@endpush
 
 @endsection
