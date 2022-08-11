@@ -28,14 +28,19 @@
 
             @include('tema.header')
 
-            @include('tema.error')
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
 
-            @yield('content')
+                    @include('tema.error')
+                    @yield('content')
 
+                </div>
+            </div>
+
+            @include('tema.footer')
         </div>
 
-        @include('tema.footer')
-
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
     @include('tema.js')

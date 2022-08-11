@@ -2,8 +2,6 @@
 @section('content')
 
     <!-- Sale & Revenue Start -->
-    <div class="container-fluid pt-4 px-4">
-        <div class="row g-4">
             <div class="col-sm-6 col-xl-3">
                 <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                     <i class="fa fa-chart-line fa-3x text-primary"></i>
@@ -40,14 +38,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+
     <!-- Sale & Revenue End -->
 
 
-    <!-- Sales Chart Start -->
-    <div class="container-fluid pt-4 px-4">
-        <div class="row g-4">
             <div class="col-sm-12 col-xl-6">
                 <div class="bg-secondary text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
@@ -66,8 +60,7 @@
                     <canvas id="salse-revenue"></canvas>
                 </div>
             </div>
-        </div>
-    </div>
+
     <!-- Sales Chart End -->
 
 

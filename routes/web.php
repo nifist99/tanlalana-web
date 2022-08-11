@@ -20,6 +20,15 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth']], function () {
         Route::get('dashboard','DashboardController@index')->name('dashboard');
         Route::get('logout','AuthController@logout');
+
+        //artikel
+        Route::get('kategori-artikel','KategoriArtikelController@index');
+        Route::get('create/kategori-artikel','KategoriArtikelController@create');
+        Route::get('detail/kategori-artikel/{id}','KategoriArtikelController@detail');
+        Route::get('edit/kategori-artikel/{id}','KategoriArtikelController@detail');
+        Route::get('delete/kategori-artikel/{id}','KategoriArtikelController@detail');
+        Route::post('store/kategori-artikel','KategoriArtikelController@store');
+        Route::post('update/kategori-artikel','KategoriArtikelController@update');
 });
 
 Route::group(['middleware' => ['guest']], function () {

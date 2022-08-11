@@ -1,0 +1,5 @@
+php artisan migrate --path=/database/migrations/fileName.php
+php artisan make:migration create_flights_table
+php artisan make:resource UserResource
+php artisan make:resource UserCollection
+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
