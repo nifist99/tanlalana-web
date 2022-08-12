@@ -21,7 +21,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('dashboard','DashboardController@index')->name('dashboard');
         Route::get('logout','AuthController@logout');
 
-        //artikel
+        //kategori artikel
         Route::get('kategori-artikel','KategoriArtikelController@index');
         Route::get('create/kategori-artikel','KategoriArtikelController@create');
         Route::get('detail/kategori-artikel/{id}','KategoriArtikelController@detail');
@@ -29,6 +29,15 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('delete/kategori-artikel/{id}','KategoriArtikelController@destroy');
         Route::post('store/kategori-artikel','KategoriArtikelController@store');
         Route::post('update/kategori-artikel','KategoriArtikelController@update');
+
+        //artikel
+        Route::get('artikel','ArtikelController@index');
+        Route::get('create/artikel','ArtikelController@create');
+        Route::get('detail/artikel/{id}','ArtikelController@detail');
+        Route::get('edit/artikel/{id}','ArtikelController@edit');
+        Route::get('delete/artikel/{id}','ArtikelController@destroy');
+        Route::post('store/artikel','ArtikelController@store');
+        Route::post('update/artikel','ArtikelController@update');
 });
 
 Route::group(['middleware' => ['guest']], function () {

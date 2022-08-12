@@ -10,7 +10,7 @@
 
         <div class="col-sm-12">
             <div class="bg-secondary rounded h-100 p-4">
-                <h6 class="mb-4">Create {{$name}}</h6>
+                <h6 class="mb-4">{{$name}}</h6>
                 <form method="POST" action="{{url('store/kategori-artikel')}}">
                     @csrf
                     <div class="row mb-3">

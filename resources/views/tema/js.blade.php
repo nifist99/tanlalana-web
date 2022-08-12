@@ -9,6 +9,6 @@
 <script src="{{url('assets/lib/sweetalert2/sweetalert2.min.js')}}"></script>
 <script src="{{url('assets/lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
 <script src="{{url('assets/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <!-- Template Javascript -->
 <script src="{{url('assets/js/main.js')}}"></script>
