@@ -38,6 +38,9 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('delete/artikel/{id}','ArtikelController@destroy');
         Route::post('store/artikel','ArtikelController@store');
         Route::post('update/artikel','ArtikelController@update');
+
+        //performance
+        Route::get('management/{id}','ManagementController@index');
 });
 
 Route::group(['middleware' => ['guest']], function () {

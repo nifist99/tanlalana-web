@@ -54,7 +54,6 @@ class ArtikelController extends Controller
             'status'              => 'required|string',
             'foto'                => 'required|file|max:2000',
             'tanggal'             => 'required|date',
-            'url_video'           => 'string',
         ]);
 
 
@@ -77,7 +76,6 @@ class ArtikelController extends Controller
             'status'              => 'required|string',
             'tanggal'             => 'required|date',
             'foto'                => 'file|max:2000',
-            'url_video'           => 'string',
         ]);
 
         $update=Artikel::updateData($request);

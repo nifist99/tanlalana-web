@@ -59,7 +59,7 @@
                               <p class="card-text">
                                 created by : {{$row->users}}  date : {{$row->created_at}}
                               </p>
-                              <a href="{{url('management/artikel/'.Crypt::encryptString($row->id))}}" class="btn btn-sm btn-light"><i class="fa fa-book"></i> Management Artikel</a>
+                              <a href="{{url('management/'.Crypt::encryptString($row->id))}}" class="btn btn-sm btn-light"><i class="fa fa-book"></i> Management Artikel</a>
                               <a href="{{url('detail/artikel/'.Crypt::encryptString($row->id))}}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
                               <a href="{{url('edit/artikel/'.Crypt::encryptString($row->id))}}" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
                               <a href="javascript:void(0)" onclick="hapus({{$row->id}})" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>

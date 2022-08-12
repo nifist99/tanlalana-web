@@ -62,7 +62,7 @@
                     <div class="row mb-3">
                         <label for="url_video" class="col-sm-2 col-form-label">Url video</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="url_video" id="url_video" placeholder="url_video" required>
+                            <input type="text" class="form-control" name="url_video" id="url_video" placeholder="url_video">
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Save</button>

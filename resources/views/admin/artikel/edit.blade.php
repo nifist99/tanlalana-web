@@ -72,7 +72,7 @@
                     <div class="row mb-3">
                         <label for="url_video" class="col-sm-2 col-form-label">Url video</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" value="{{$row->url_video}}" name="url_video" id="url_video" placeholder="url video" required>
+                            <input type="text" class="form-control" value="{{$row->url_video}}" name="url_video" id="url_video" placeholder="url video">
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Edit</button>
