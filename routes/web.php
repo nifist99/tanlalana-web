@@ -51,6 +51,15 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('store/komentar','KomentarController@store');
         Route::post('update/komentar','KomentarController@update');
 
+        //subkomentar
+        Route::get('subkomentar/{id}','SubKomentarController@index');
+        Route::get('create/subkomentar/{id}','SubKomentarController@create');
+        Route::get('detail/subkomentar/{id}/{id_komentar}','SubKomentarController@detail');
+        Route::get('edit/subkomentar/{id}/{id_komentar}','SubKomentarController@edit');
+        Route::get('delete/subkomentar/{id}','SubKomentarController@destroy');
+        Route::post('store/subkomentar','SubKomentarController@store');
+        Route::post('update/subkomentar','SubKomentarController@update');
+
         //download
         Route::get('download/{id}','DownloadController@index');
         Route::get('create/download/{id}','DownloadController@create');

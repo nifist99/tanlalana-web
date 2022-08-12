@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Image;
 use Storage;
 use Illuminate\Support\Str;
+use App\Models\SubKomentar;
 
 class Setting {
 
@@ -23,6 +24,12 @@ class Setting {
         $path               =Storage::putFileAs($file_path, $file, $filename);
 
         return $folder.'/'.$filename;
+    }
+
+    public static function SubKomentar($id,$id_komentar){
+        $list = SubKomentar::listData($id,$id_komentar);
+
+        return $list;
     }
 
 }
