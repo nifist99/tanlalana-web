@@ -29,9 +29,9 @@
 <div class="col-sm-12">
     <div class="bg-secondary rounded h-100 p-4">
         <div class="m-n2">
-            <a href="{{url('create/artikel')}}" class="btn btn-sm btn-primary m-2">Performance</a>
-            <a href="{{url('create/artikel')}}" class="btn btn-sm btn-outline-primary m-2">Link Download</a>
-            <a href="{{url('create/artikel')}}" class="btn btn-sm btn-outline-primary m-2">Komentar</a>
+            <a href="{{url('management/'.Crypt::encryptString($row->id))}}" class="btn btn-sm @if($sublink=='performance') btn-primary @else btn-outline-primary @endif m-2">Performance</a>
+            <a href="{{url('download/'.Crypt::encryptString($row->id))}}" class="btn btn-sm @if($sublink=='download') btn-primary @else btn-outline-primary @endif m-2">Link Download</a>
+            <a href="{{url('komentar/'.Crypt::encryptString($row->id))}}" class="btn btn-sm @if($sublink=='komentar') btn-primary @else btn-outline-primary @endif m-2">Komentar</a>
         </div>
     </div>
 </div>

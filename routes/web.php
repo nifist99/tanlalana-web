@@ -41,6 +41,24 @@ Route::group(['middleware' => ['auth']], function () {
 
         //performance
         Route::get('management/{id}','ManagementController@index');
+
+        //komentar
+        Route::get('komentar/{id}','KomentarController@index');
+        Route::get('create/komentar/{id}','KomentarController@create');
+        Route::get('detail/komentar/{id}/{id_komentar}','KomentarController@detail');
+        Route::get('edit/komentar/{id}/{id_komentar}','KomentarController@edit');
+        Route::get('delete/komentar/{id}','KomentarController@destroy');
+        Route::post('store/komentar','KomentarController@store');
+        Route::post('update/komentar','KomentarController@update');
+
+        //download
+        Route::get('download/{id}','DownloadController@index');
+        Route::get('create/download/{id}','DownloadController@create');
+        Route::get('detail/download/{id}/{id_download}','DownloadController@detail');
+        Route::get('edit/download/{id}/{id_download}','DownloadController@edit');
+        Route::get('delete/download/{id}','DownloadController@destroy');
+        Route::post('store/download','DownloadController@store');
+        Route::post('update/download','DownloadController@update');
 });
 
 Route::group(['middleware' => ['guest']], function () {
