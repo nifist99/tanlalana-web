@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','web\BlogController@index');
 Route::get('contact','web\BlogController@contact');
+Route::get('category','web\BlogController@category');
 Route::get('blog/{id}','web\BlogController@detail');
 Route::post('komentar','web\BlogController@komentar');
 Route::post('subkomentar','web\BlogController@subKomentar');

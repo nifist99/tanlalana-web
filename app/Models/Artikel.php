@@ -38,6 +38,18 @@ class Artikel extends Model
         return $list;
     }
 
+    public static function listNew(){
+        $list = DB::table('artikel')
+                ->join('users','artikel.created_by','=','users.id')
+                ->join('kategori_artikel','artikel.id_kategori_artikel','=','kategori_artikel.id')
+                ->where('artikel.status','publish')
+                ->orderBy('artikel.id','desc') 
+                ->select('artikel.*','users.name as users','kategori_artikel.name as kategori_artikel')
+                ->get(5);
+
+        return $list;
+    }
+
     public static function countData(){
         $count = DB::table('artikel')
                     ->join('users','artikel.created_by','=','users.id')

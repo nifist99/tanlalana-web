@@ -17,6 +17,7 @@ class BlogController extends Controller
 
         $data['link']='home';
         $data['list']=Artikel::listData();
+        $data['new']=Artikel::listNew();
         return view('web.index',$data);
     }
 
@@ -24,6 +25,12 @@ class BlogController extends Controller
 
         $data['link']='contact';
         return view('web.contact',$data);
+    }
+
+    public function category(){
+
+        $data['link']='category';
+        return view('web.category',$data);
     }
 
     public function detail($id){

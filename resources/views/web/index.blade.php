@@ -43,6 +43,9 @@
                     @endforeach
                     
                 </div>
+                <div class="mt-4">
+                    {{ $list->links() }}
+                </div>
             </div>
 
             <div class="col-lg-3">
@@ -66,47 +69,20 @@
                 </div>
                 <div class="product__sidebar__comment">
                     <div class="section-title">
-                        <h5>Artikel Populer</h5>
+                        <h5>Artikel Terbaru</h5>
                     </div>
                     <div class="product__sidebar__comment__item">
+                        @foreach($new as $val)
                         <div class="product__sidebar__comment__item__text">
                             <ul>
-                                <li>Active</li>
-                                <li>Movie</li>
+                                <li>{{$val->status}}</li>
+                                <li>{{$val->kategori_artikel}}</li>
                             </ul>
-                            <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
-                            <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
+                            <h5><a href="#">{{$val->judul}}</a></h5>
+                            <span><i class="fa fa-eye"></i> {{rand(10, 20000);}} Viewes</span>
                         </div>
-                    </div>
-                    <div class="product__sidebar__comment__item">
-                        <div class="product__sidebar__comment__item__text">
-                            <ul>
-                                <li>Active</li>
-                                <li>Movie</li>
-                            </ul>
-                            <h5><a href="#">Shirogane Tamashii hen Kouhan sen</a></h5>
-                            <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
-                        </div>
-                    </div>
-                    <div class="product__sidebar__comment__item">
-                        <div class="product__sidebar__comment__item__text">
-                            <ul>
-                                <li>Active</li>
-                                <li>Movie</li>
-                            </ul>
-                            <h5><a href="#">Kizumonogatari III: Reiket su-hen</a></h5>
-                            <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
-                        </div>
-                    </div>
-                    <div class="product__sidebar__comment__item">
-                        <div class="product__sidebar__comment__item__text">
-                            <ul>
-                                <li>Active</li>
-                                <li>Movie</li>
-                            </ul>
-                            <h5><a href="#">Monogatari Series: Second Season</a></h5>
-                            <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
-                        </div>
+                        <hr style="color: red">
+                        @endforeach
                     </div>
                 </div>
             </div>
