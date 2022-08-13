@@ -25,6 +25,9 @@
 
         gtag('config', 'G-8B8Z8NW0ZR');
         </script>
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9727445183666854"
+        crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Page Preloder -->
