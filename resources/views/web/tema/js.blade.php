@@ -7,3 +7,4 @@
 <script src="{{url('web/js/jquery.slicknav.js')}}"></script>
 <script src="{{url('web/js/owl.carousel.min.js')}}"></script>
 <script src="{{url('web/js/main.js')}}"></script>
+<script src="{{url('assets/lib/sweetalert2/sweetalert2.min.js')}}"></script>

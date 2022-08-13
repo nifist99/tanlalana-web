@@ -14,3 +14,4 @@
     <link rel="stylesheet" href="{{url('web/css/owl.carousel.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('web/css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('web/css/style.css')}}" type="text/css">
+    <link href="{{url('assets/lib/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet">

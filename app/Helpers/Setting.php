@@ -32,4 +32,8 @@ class Setting {
         return $list;
     }
 
+    public static function blogDate($date){
+       return Carbon::parse($date)->format('M d Y');
+    }
+
 }

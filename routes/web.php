@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('web.index');
-});
+
+Route::get('/','Web\BlogController@index');
+Route::get('contact','Web\BlogController@contact');
+Route::get('blog/{id}','Web\BlogController@detail');
+Route::post('komentar','Web\BlogController@komentar');
+Route::post('subkomentar','Web\BlogController@subKomentar');
 
 Route::group(['middleware' => ['auth']], function () {
         Route::get('dashboard','DashboardController@index')->name('dashboard');

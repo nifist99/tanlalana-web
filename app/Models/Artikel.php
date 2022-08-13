@@ -33,7 +33,7 @@ class Artikel extends Model
                 ->where('artikel.status','publish')
                 ->orderBy('artikel.id','desc') 
                 ->select('artikel.*','users.name as users','kategori_artikel.name as kategori_artikel')
-                ->paginate(10);
+                ->paginate(12);
 
         return $list;
     }
@@ -101,13 +101,18 @@ class Artikel extends Model
         return $update;
     }
 
-    public static function detailData($request){
+    public static function detailData($id){
         $detail=DB::table('artikel')
                 ->join('users','artikel.created_by','=','users.id')
                 ->join('kategori_artikel','artikel.id_kategori_artikel','=','kategori_artikel.id')
-                ->where('artikel.id',$request->id)
+                ->where('artikel.id',$id)
                 ->select('artikel.*','users.name as users','kategori_artikel.name as kategori_artikel')
                 ->first();
+
+        $komentar = DB::table('komentar')->where('id_artikel',$id)->get();
+
+        $sum_komentar = DB::table('komentar')->where('id_artikel',$id)->count();
+        $sum_subkomentar = DB::table('subkomentar')->where('id_artikel',$id)->count();
 
         return [
             'id'                  => $detail->id,
@@ -121,6 +126,8 @@ class Artikel extends Model
             'foto'                => url('storage/'.$detail->foto),
             'created_at'          => $detail->created_at,
             'updated_at'          => $detail->updated_at,
+            'komentar'            => $komentar,
+            'total'               => $sum_komentar + $sum_subkomentar,
         ];
     }
 }
