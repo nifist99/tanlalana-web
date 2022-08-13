@@ -78,7 +78,7 @@
                                 <li>{{$val->status}}</li>
                                 <li>{{$val->kategori_artikel}}</li>
                             </ul>
-                            <h5><a href="#">{{$val->judul}}</a></h5>
+                            <h5><a href="{{url('blog/'.Crypt::encryptString($val->id))}}">{{$val->judul}}</a></h5>
                             <span><i class="fa fa-eye"></i> {{rand(10, 20000);}} Viewes</span>
                         </div>
                         <hr style="color: red">

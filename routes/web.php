@@ -16,11 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','web\BlogController@index');
 Route::get('by/category/{id}','web\BlogController@indexByCategory');
-Route::get('contact','web\BlogController@contact');
+Route::get('blog/contact','web\BlogController@contact');
 Route::get('category','web\BlogController@category');
 Route::get('blog/{id}','web\BlogController@detail');
 Route::post('komentar','web\BlogController@komentar');
 Route::post('subkomentar','web\BlogController@subKomentar');
+Route::post('store/contact','web\BlogController@insertContact');
+Route::post('search','web\BlogController@search');
 
 Route::group(['middleware' => ['auth']], function () {
         Route::get('dashboard','DashboardController@index')->name('dashboard');
@@ -43,6 +45,11 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('delete/artikel/{id}','ArtikelController@destroy');
         Route::post('store/artikel','ArtikelController@store');
         Route::post('update/artikel','ArtikelController@update');
+
+        //contact
+        Route::get('contact','ContactController@index');
+        Route::get('delete/contact/{id}','ContactController@destroy');
+
 
         //performance
         Route::get('management/{id}','ManagementController@index');

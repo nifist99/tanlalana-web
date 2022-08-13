@@ -15,7 +15,7 @@
                         <ul>
                             <li @if($link=='home') class="active" @endif><a href="{{url('/')}}">Home</a></li>
                             <li @if($link=='category') class="active" @endif><a href="{{url('category')}}">Categories</a></li>
-                            <li @if($link=='contact') class="active" @endif><a href="{{url('contact')}}">Contacts</a></li>
+                            <li @if($link=='contact') class="active" @endif><a href="{{url('blog/contact')}}">Contacts</a></li>
                         </ul>
                     </nav>
                 </div>

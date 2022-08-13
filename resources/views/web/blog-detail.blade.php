@@ -25,7 +25,7 @@
                         @endphp
                     </div>
                     <div class="blog__details__tags">
-                        <a href="#">{{$row['kategori_artikel']}}</a>
+                        <a href="{{url('by/category/'.Crypt::encryptString($row['id_kategori_artikel']))}}">{{$row['kategori_artikel']}}</a>
                     </div>
                         <div class="blog__details__btns">
                 

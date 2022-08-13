@@ -31,19 +31,31 @@
             <div class="col-sm-8">
                 <div class="blog__details__form">
                     <h4>Leave A Message</h4>
-                    <form action="#">
+                    <div>
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+                    </div>
+                    <form action="{{url('store/contact')}}" method="POST">
+                        @csrf
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
-                                <input type="text" placeholder="Name">
+                                <input type="text" placeholder="Name" name="name" required>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
-                                <input type="text" placeholder="Email">
+                                <input type="email" placeholder="Email" name="email" required>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12">
-                                <input type="number" placeholder="Phone">
+                                <input type="number" placeholder="Phone" name="phone" required>
                             </div>
                             <div class="col-lg-12">
-                                <textarea placeholder="Message"></textarea>
+                                <textarea placeholder="Message" name="content"></textarea>
                                 <button type="submit" class="site-btn">Send Message</button>
                             </div>
                         </div>
@@ -53,5 +65,19 @@
         </div>
     </div>
 </section>
+
+@if(session()->has('message'))
+    @push('js')
+        <script>
+            Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: "{{session('message')}}",
+                        showConfirmButton: false,
+                        timer: 5000
+                        })
+        </script>
+    @endpush
+@endif
 
 @endsection

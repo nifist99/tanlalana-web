@@ -16,6 +16,7 @@
         <div class="navbar-nav w-100">
             <a href="{{url('dashboard')}}" class="nav-item nav-link @if($link=='dashboard') active @endif"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
             <a href="{{url('artikel')}}" class="nav-item nav-link @if($link=='artikel') active @endif"><i class="fa fa-th me-2"></i>Artikel</a>
+            <a href="{{url('contact')}}" class="nav-item nav-link @if($link=='contact') active @endif"><i class="fa fa-th me-2"></i>Contact</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle @if($link=='kategori_artikel') active @endif" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Data</a>
                 <div class="dropdown-menu bg-transparent border-0">

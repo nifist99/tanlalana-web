@@ -9,6 +9,7 @@ use App\Models\Artikel;
 use App\Models\KategoriArtikel;
 use App\Models\Komentar;
 use App\Models\SubKomentar;
+use App\Models\Contact;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Crypt;
 
@@ -26,6 +27,18 @@ class BlogController extends Controller
 
         $data['link']='home';
         $data['list']=Artikel::listByCategory(Crypt::decryptString($id));
+        $data['new']=Artikel::listNew();
+        return view('web.index',$data);
+    }
+
+    public function search(Request $request){
+
+        $request->validate([
+            'judul' => 'required',
+        ]);
+
+        $data['link']='home';
+        $data['list']=Artikel::search($request->judul);
         $data['new']=Artikel::listNew();
         return view('web.index',$data);
     }
@@ -79,6 +92,23 @@ class BlogController extends Controller
             return redirect()->back()->with('message','berhasil menambahkan komentar')->with('message_type','info');
         }else{
             return redirect()->back()->with('message','gagal menambahkan komentar')->with('message_type','primary');
+        }
+    }
+
+    public function insertContact(Request $request){
+        $request->validate([
+            'name' => 'required|min:3',
+            'content' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required|numeric',
+        ]);
+
+        $save=Contact::insertData($request);
+
+        if($save){
+            return redirect()->back()->with('message','berhasil mengirimkan pesan')->with('message_type','info');
+        }else{
+            return redirect()->back()->with('message','gagal mengirimkan pesan')->with('message_type','primary');
         }
     }
 }
