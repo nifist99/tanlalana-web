@@ -50,7 +50,7 @@ class ArtikelController extends Controller
         $request->validate([
             'id_kategori_artikel' => 'required|integer',
             'judul'               => 'required|string',
-            'content'             => 'required|string',
+            'content'             => 'required',
             'status'              => 'required|string',
             'foto'                => 'required|file|max:2000',
             'tanggal'             => 'required|date',
@@ -72,7 +72,7 @@ class ArtikelController extends Controller
             'id' => 'required|integer',
             'id_kategori_artikel' => 'required|integer',
             'judul'               => 'required|string',
-            'content'             => 'required|string',
+            'content'             => 'required',
             'status'              => 'required|string',
             'tanggal'             => 'required|date',
             'foto'                => 'file|max:2000',
