@@ -14,13 +14,24 @@ use App\Models\Download;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Crypt;
 
+use Artesaos\SEOTools\Traits\SEOTools as SEOToolsTrait;
+
 class BlogController extends Controller
 {
+    use SEOToolsTrait;
     public function index(){
 
         $data['link']='home';
         $data['list']=Artikel::listData();
         $data['new']=Artikel::listNew();
+
+        $this->seo()->setTitle('Home');
+        $this->seo()->setDescription('Tutorial programming dan komputer');
+        $this->seo()->opengraph()->setUrl('http://tanlalana.com');
+        $this->seo()->opengraph()->addProperty('type', 'artikel');
+        $this->seo()->twitter()->setSite('@gomugoomuno');
+        $this->seo()->jsonLd()->setType('artikel');
+
         return view('web.index',$data);
     }
 
