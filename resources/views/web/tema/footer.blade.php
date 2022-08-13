@@ -7,15 +7,15 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="footer__logo">
-                    <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                    <a href="{{url('/')}}"><img src="{{url('web/img/logo.png')}}" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="footer__nav">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
-                        <li><a href="./categories.html">Categories</a></li>
-                        <li><a href="{{url('contact')}}">Contacts</a></li>
+                        <li class="active"><a href="{{url('/')}}">Home</a></li>
+                        <li><a href="{{url('category')}}">Categories</a></li>
+                        <li><a href="{{url('blog/contact')}}">Contacts</a></li>
                     </ul>
                 </div>
             </div>

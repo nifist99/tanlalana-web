@@ -37,7 +37,7 @@
 
                             <div class="blog__details__comment__item">
                                 <div class="blog__details__comment__item__pic">
-                                    <img src="{{url('web/img/blog/details/comment-1.png')}}" alt="">
+                                    <img src="{{url('web/img/profile/'.rand(1,15).'.jpg')}}" style="width: 50px;height:50px;border-radius:50px" alt="">
                                 </div>
                                 <div class="blog__details__comment__item__text">
                                     <span>{{Setting::blogDate($key->created_at)}}</span>
@@ -50,7 +50,7 @@
                                 @foreach(Setting::SubKomentar($row['id'],$key->id) as $val)
                                     <div class="blog__details__comment__item blog__details__comment__item--reply">
                                         <div class="blog__details__comment__item__pic">
-                                            <img src="{{url('web/img/blog/details/comment-2.png')}}" alt="">
+                                            <img src="{{url('web/img/profile/'.rand(1,15).'.jpg')}}" style="width: 50px;height:50px;border-radius:50px" alt="">
                                         </div>
                                         <div class="blog__details__comment__item__text">
                                             <span>{{Setting::blogDate($val->created_at)}}</span>
