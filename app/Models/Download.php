@@ -26,6 +26,15 @@ class Download extends Model
         return $list;
     }
 
+    public static function listAllDownload($id){
+        $list=DB::table('download')
+                ->where('id_artikel',$id)
+                ->orderBy('id','desc')
+                ->get();
+
+        return $list;
+    }
+
     public static function insertData($request){
 
         $save = Download::create([

@@ -151,6 +151,7 @@ class Artikel extends Model
 
         $sum_komentar = DB::table('komentar')->where('id_artikel',$id)->count();
         $sum_subkomentar = DB::table('subkomentar')->where('id_artikel',$id)->count();
+        $download = DB::table('download')->where('id_artikel',$id)->count();
 
         return [
             'id'                  => $detail->id,
@@ -160,12 +161,14 @@ class Artikel extends Model
             'content'             => $detail->content,
             'status'              => $detail->status,
             'tanggal'             => $detail->tanggal,
+            'url_video'           => $detail->url_video,
             'users'               => $detail->users,
             'foto'                => url('storage/'.$detail->foto),
             'created_at'          => $detail->created_at,
             'updated_at'          => $detail->updated_at,
             'komentar'            => $komentar,
             'total'               => $sum_komentar + $sum_subkomentar,
+            'download'            => $download,
         ];
     }
 }

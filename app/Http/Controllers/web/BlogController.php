@@ -10,6 +10,7 @@ use App\Models\KategoriArtikel;
 use App\Models\Komentar;
 use App\Models\SubKomentar;
 use App\Models\Contact;
+use App\Models\Download;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Crypt;
 
@@ -21,6 +22,14 @@ class BlogController extends Controller
         $data['list']=Artikel::listData();
         $data['new']=Artikel::listNew();
         return view('web.index',$data);
+    }
+
+    public function download($id){
+
+        $data['link']='home';
+        $data['row']=Artikel::detailData(Crypt::decryptString($id));
+        $data['list']=Download::listAllDownload(Crypt::decryptString($id));
+        return view('web.download',$data);
     }
 
     public function indexByCategory($id){

@@ -27,9 +27,22 @@
                     <div class="blog__details__tags">
                         <a href="{{url('by/category/'.Crypt::encryptString($row['id_kategori_artikel']))}}">{{$row['kategori_artikel']}}</a>
                     </div>
+
+                    @if($row['download']!=0)
+                        <p style="color: white">Silahkan Download File Di Sini</p>
                         <div class="blog__details__btns">
-                
+                            <div class="anime__details__btn">
+                                <a href="{{url('blog/download/'.Crypt::encryptString($row['id']))}}" class="watch-btn"><span>Download Di Sini</span> <i
+                                    class="fa fa-angle-right"></i></a>
+                            </div>
                         </div>
+                    @else
+                    <div class="blog__details__btns">
+                    </div>
+                    @endif
+
+                </div>
+
                         <div class="blog__details__comment">
                             <h4>{{$row['total']}} Comments</h4>
 
