@@ -46,6 +46,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('delete/artikel/{id}','ArtikelController@destroy');
         Route::post('store/artikel','ArtikelController@store');
         Route::post('update/artikel','ArtikelController@update');
+        Route::post('update/artikel-content','ArtikelController@updateContent');
+        Route::get('edit-content/artikel/{id}','ArtikelController@editContent');
 
         //contact
         Route::get('contact','ContactController@index');

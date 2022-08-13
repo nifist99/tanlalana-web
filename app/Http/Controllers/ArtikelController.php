@@ -39,6 +39,13 @@ class ArtikelController extends Controller
         return view('admin.artikel.edit',$data);
     }
 
+    public function editContent($id){
+        $data['name']='Artikel';
+        $data['link']='artikel';
+        $data['row']=Artikel::find(Crypt::decryptString($id));
+        return view('admin.artikel.edit-content',$data);
+    }
+
     public function detail($id){
         $data['name']='Artikel';
         $data['link']='artikel';
@@ -72,13 +79,30 @@ class ArtikelController extends Controller
             'id' => 'required|integer',
             'id_kategori_artikel' => 'required|integer',
             'judul'               => 'required|string',
-            'content'             => 'required',
             'status'              => 'required|string',
             'tanggal'             => 'required|date',
             'foto'                => 'file|max:2000',
         ]);
 
         $update=Artikel::updateData($request);
+
+        if($update){
+            return redirect()->back()->with('message','success update data')->with('message_type','info');
+        }else{
+            return redirect()->back()->with('message','failed update data')->with('message_type','primary');
+        }
+        
+
+    }
+
+    public function updateContent(Request $request){
+
+        $request->validate([
+            'id'                  => 'required|integer',
+            'content'             => 'required',
+        ]);
+
+        $update=Artikel::updateContent($request);
 
         if($update){
             return redirect()->back()->with('message','success update data')->with('message_type','info');

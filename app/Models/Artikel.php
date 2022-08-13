@@ -127,11 +127,21 @@ class Artikel extends Model
         
             $data['id_kategori_artikel']=$request->id_kategori_artikel;
             $data['judul']=$request->judul;
-            $data['content']=$request->content;
             $data['status']=$request->status;
             $data['tanggal']=$request->tanggal;
             $data['url_video']=$request->url_video;
             $data['updated_by']=Session::get('id_users');
+        
+        $update=Artikel::where('id',$request->id)
+                ->update($data);
+
+        return $update;
+    }
+
+    public static function updateContent($request){
+
+        $data['content']=$request->content;
+        $data['updated_by']=Session::get('id_users');
         
         $update=Artikel::where('id',$request->id)
                 ->update($data);

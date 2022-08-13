@@ -17,7 +17,7 @@ class CreateArtikelTable extends Migration
             $table->id();
             $table->integer('id_kategori_artikel');
             $table->string('judul');
-            $table->text('content');
+            $table->longText('content');
             $table->text('url_video')->nullable();
             $table->string('status');
             $table->string('foto');
