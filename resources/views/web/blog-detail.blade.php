@@ -127,15 +127,15 @@
 
 @if(session()->has('message'))
     @push('js')
-    <script>
-        Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    title: "{{session('message')}}",
-                    showConfirmButton: false,
-                    timer: 5000
-                    })
-    </script>
+        <script>
+            Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: "{{session('message')}}",
+                        showConfirmButton: false,
+                        timer: 5000
+                        })
+        </script>
     @endpush
 @endif
 

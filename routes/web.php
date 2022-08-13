@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/','web\BlogController@index');
+Route::get('by/category/{id}','web\BlogController@indexByCategory');
 Route::get('contact','web\BlogController@contact');
 Route::get('category','web\BlogController@category');
 Route::get('blog/{id}','web\BlogController@detail');

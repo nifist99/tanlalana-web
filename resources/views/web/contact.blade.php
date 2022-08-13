@@ -1,6 +1,7 @@
 @extends('web.tema.content')
 @section('content')
 
+
 <section class="normal-breadcrumb set-bg" data-setbg="{{url('web/img/normal-breadcrumb.jpg')}}">
     <div class="container">
         <div class="row">

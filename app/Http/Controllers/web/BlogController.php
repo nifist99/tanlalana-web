@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Resources\ArtikelCollection;
 use App\Models\Artikel;
+use App\Models\KategoriArtikel;
 use App\Models\Komentar;
 use App\Models\SubKomentar;
 use Illuminate\Support\Str;
@@ -21,6 +22,14 @@ class BlogController extends Controller
         return view('web.index',$data);
     }
 
+    public function indexByCategory($id){
+
+        $data['link']='home';
+        $data['list']=Artikel::listByCategory(Crypt::decryptString($id));
+        $data['new']=Artikel::listNew();
+        return view('web.index',$data);
+    }
+
     public function contact(){
 
         $data['link']='contact';
@@ -28,7 +37,7 @@ class BlogController extends Controller
     }
 
     public function category(){
-
+        $data['list']=KategoriArtikel::listKategori();
         $data['link']='category';
         return view('web.category',$data);
     }
@@ -50,9 +59,9 @@ class BlogController extends Controller
         $save=Komentar::insertData($request);
 
         if($save){
-            return redirect()->back()->with('message','success save data')->with('message_type','info');
+            return redirect()->back()->with('message','berhasil menambahkan komentar')->with('message_type','info');
         }else{
-            return redirect()->back()->with('message','failed save data')->with('message_type','primary');
+            return redirect()->back()->with('message','gagal menambahkan komentar')->with('message_type','primary');
         }
     }
 
@@ -67,9 +76,9 @@ class BlogController extends Controller
         $save=SubKomentar::insertData($request);
 
         if($save){
-            return redirect()->back()->with('message','success save data')->with('message_type','info');
+            return redirect()->back()->with('message','berhasil menambahkan komentar')->with('message_type','info');
         }else{
-            return redirect()->back()->with('message','failed save data')->with('message_type','primary');
+            return redirect()->back()->with('message','gagal menambahkan komentar')->with('message_type','primary');
         }
     }
 }

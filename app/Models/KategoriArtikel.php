@@ -24,6 +24,14 @@ class KategoriArtikel extends Model
         return $list;
     }
 
+    public static function listKategori(){
+        $list=DB::table('kategori_artikel')
+                ->orderBy('id','desc')
+                ->get();
+
+        return $list;
+    }
+
     public static function insertData($request){
 
         $save = KategoriArtikel::create([

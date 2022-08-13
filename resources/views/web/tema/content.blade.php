@@ -24,5 +24,7 @@
 
     @include('web.tema.footer')
     @include('web.tema.js')
+
+    @stack('js')
 </body>
 </html>
