@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/','Web\BlogController@index');
-Route::get('contact','Web\BlogController@contact');
-Route::get('blog/{id}','Web\BlogController@detail');
-Route::post('komentar','Web\BlogController@komentar');
-Route::post('subkomentar','Web\BlogController@subKomentar');
+Route::get('/','web\BlogController@index');
+Route::get('contact','web\BlogController@contact');
+Route::get('blog/{id}','web\BlogController@detail');
+Route::post('komentar','web\BlogController@komentar');
+Route::post('subkomentar','web\BlogController@subKomentar');
 
 Route::group(['middleware' => ['auth']], function () {
         Route::get('dashboard','DashboardController@index')->name('dashboard');
