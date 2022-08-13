@@ -36,7 +36,7 @@
                         <h5>Link Download</h5>
                     </div>
                     @foreach($list as $key)
-                    <a href="{{$key->link}}">{{$key->name}}</a>
+                    <a href="{{'https://semawur.com/st/?api=62b0b50bdf3aa1cc54078c86d94c4f5811d1b1b1&url=d'.$key->link}}">{{$key->name}}</a>
                     @endforeach
                 </div>
             </div>
