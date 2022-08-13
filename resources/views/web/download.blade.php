@@ -21,14 +21,16 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="mb-5">
-                    <iframe width="100%" height="400px" 
-                    src="{{'https://www.youtube.com/embed/'.$row['url_video']}}"
-                    title="YouTube video player" frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; 
-                    encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe>
-                </div>
+                @if($row['url_video'])
+                    <div class="mb-5">
+                        <iframe width="100%" height="400px" 
+                        src="{{'https://www.youtube.com/embed/'.$row['url_video']}}"
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; 
+                        encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                    </div>
+                @endif
                 <div class="anime__details__episodes">
                     <div class="section-title">
                         <h5>Link Download</h5>
