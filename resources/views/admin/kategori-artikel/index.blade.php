@@ -18,7 +18,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col">ID</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -26,7 +26,7 @@
                         <tbody>
                             @foreach($list as $row)
                                 <tr>
-                                    <th scope="row">{{$no++}}</th>
+                                    <th scope="row">{{$row->id}}</th>
                                     <td>{{$row->name}}</td>
                                     <td>
                                         <a href="{{url('edit/kategori-artikel/'.Crypt::encryptString($row->id))}}" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>

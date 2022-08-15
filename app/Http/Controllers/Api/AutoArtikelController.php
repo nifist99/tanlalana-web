@@ -18,6 +18,7 @@ class AutoArtikelController extends Controller
 {
     public function store(Request $request){
         $validator = Validator::make($request->all(), [
+            'id_kategori_artikel' => 'required',
             'judul'               => 'required|string',
             'content'             => 'required',
             'status'              => 'required|string',
@@ -41,7 +42,7 @@ class AutoArtikelController extends Controller
 
 
         $save=Artikel::create([
-            'id_kategori_artikel' => 1,
+            'id_kategori_artikel' => $request->id_kategori_artikel,
             'judul'               => $request->judul,
             'content'             => $request->content,
             'status'              => $request->status,
