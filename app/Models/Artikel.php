@@ -33,7 +33,7 @@ class Artikel extends Model
                 ->join('kategori_artikel','artikel.id_kategori_artikel','=','kategori_artikel.id')
                 ->orderBy('artikel.id','desc') 
                 ->select('artikel.*','users.name as users','kategori_artikel.name as kategori_artikel')
-                ->paginate(12);
+                ->paginate(10);
 
         return $list;
     }
@@ -45,7 +45,7 @@ class Artikel extends Model
                 ->where('artikel.status','publish')
                 ->orderBy('artikel.id','desc') 
                 ->select('artikel.*','users.name as users','kategori_artikel.name as kategori_artikel')
-                ->paginate(12);
+                ->paginate(21);
 
         return $list;
     }
@@ -57,7 +57,8 @@ class Artikel extends Model
                 ->where('artikel.status','publish')
                 ->orderBy('artikel.id','desc') 
                 ->select('artikel.*','users.name as users','kategori_artikel.name as kategori_artikel')
-                ->get(5);
+                ->limit(5)
+                ->get();
 
         return $list;
     }

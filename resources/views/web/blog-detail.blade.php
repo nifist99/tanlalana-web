@@ -24,6 +24,9 @@
         ul li{
             color: white
         }
+        ol li{
+            color: white
+        }
     </style>
 @endpush
 
