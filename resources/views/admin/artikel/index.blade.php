@@ -69,10 +69,11 @@
                           </div>
                     </div>
                     @endforeach
+                    <div class="mt-4">
+                      {{ $list->links() }}
+                  </div>
                 </div>
-                <div class="mt-4">
-                    {{ $list->links() }}
-                </div>
+                
             </div>
 
 @push('js')
