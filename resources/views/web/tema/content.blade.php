@@ -10,8 +10,6 @@
 
     {!! SEO::generate(true) !!}
 
-    <title>{{Setting::app()}}</title>
-
     @include('web.tema.css')
 
     @stack('css')

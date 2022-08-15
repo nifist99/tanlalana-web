@@ -9,3 +9,12 @@ https://bestofphp.com/repo/artesaos-seotools-php-laravel-utilities
 https://shrinkearn.com/auth/signup
 
 https://safelinku.com/member/tools/quick
+
+  {{-- <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="blog__item small__item set-bg" data-setbg="{{url('storage/'.$row->foto)}}">
+                            <div class="blog__item__text">
+                                <p><span class="icon_calendar"></span> {{Setting::blogDate($row->tanggal)}}</p>
+                                <h4><a href="{{url('blog/'.Crypt::encryptString($row->id))}}">{{$row->judul}}</a></h4>
+                            </div>
+                        </div>
+                    </div> --}}

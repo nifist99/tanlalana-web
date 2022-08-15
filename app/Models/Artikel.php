@@ -45,7 +45,7 @@ class Artikel extends Model
                 ->where('artikel.status','publish')
                 ->orderBy('artikel.id','desc') 
                 ->select('artikel.*','users.name as users','kategori_artikel.name as kategori_artikel')
-                ->paginate(21);
+                ->paginate(12);
 
         return $list;
     }

@@ -26,7 +26,7 @@ class BlogController extends Controller
         $data['new']=Artikel::listNew();
 
         $this->seo()->setTitle('Home');
-        $this->seo()->setDescription('Tutorial programming dan komputer');
+        $this->seo()->setDescription('Artikel Mengenai Crypto dan fintech');
         $this->seo()->opengraph()->setUrl('http://tanlalana.com');
         $this->seo()->opengraph()->addProperty('type', 'artikel');
         $this->seo()->twitter()->setSite('@gomugoomuno');
@@ -37,6 +37,13 @@ class BlogController extends Controller
 
     public function download($id){
 
+        $this->seo()->setTitle('Download');
+        $this->seo()->setDescription('Artikel Mengenai Crypto dan fintech');
+        $this->seo()->opengraph()->setUrl('http://tanlalana.com');
+        $this->seo()->opengraph()->addProperty('type', 'download');
+        $this->seo()->twitter()->setSite('@gomugoomuno');
+        $this->seo()->jsonLd()->setType('download');
+
         $data['link']='home';
         $data['row']=Artikel::detailData(Crypt::decryptString($id));
         $data['list']=Download::listAllDownload(Crypt::decryptString($id));
@@ -44,6 +51,13 @@ class BlogController extends Controller
     }
 
     public function indexByCategory($id){
+
+        $this->seo()->setTitle('By Category');
+        $this->seo()->setDescription('Artikel Mengenai Crypto dan fintech');
+        $this->seo()->opengraph()->setUrl('http://tanlalana.com');
+        $this->seo()->opengraph()->addProperty('type', 'By Category');
+        $this->seo()->twitter()->setSite('@gomugoomuno');
+        $this->seo()->jsonLd()->setType('By Category');
 
         $data['link']='home';
         $data['list']=Artikel::listByCategory(Crypt::decryptString($id));
@@ -57,6 +71,13 @@ class BlogController extends Controller
             'judul' => 'required',
         ]);
 
+        $this->seo()->setTitle('Seacrh');
+        $this->seo()->setDescription('Artikel Mengenai Crypto dan fintech');
+        $this->seo()->opengraph()->setUrl('http://tanlalana.com');
+        $this->seo()->opengraph()->addProperty('type', 'search');
+        $this->seo()->twitter()->setSite('@gomugoomuno');
+        $this->seo()->jsonLd()->setType('search');
+
         $data['link']='home';
         $data['list']=Artikel::search($request->judul);
         $data['new']=Artikel::listNew();
@@ -66,18 +87,42 @@ class BlogController extends Controller
     public function contact(){
 
         $data['link']='contact';
+
+        $this->seo()->setTitle('Contact');
+        $this->seo()->setDescription('Silahkan Hubungi Kami');
+        $this->seo()->opengraph()->setUrl('http://tanlalana.com/contact');
+        $this->seo()->opengraph()->addProperty('type','contact');
+        $this->seo()->twitter()->setSite('@gomugoomuno');
+        $this->seo()->jsonLd()->setType('contact');
+
         return view('web.contact',$data);
     }
 
     public function category(){
         $data['list']=KategoriArtikel::listKategori();
         $data['link']='category';
+
+        $this->seo()->setTitle('Category');
+        $this->seo()->setDescription('Artikel Mengenai Crypto dan fintech');
+        $this->seo()->opengraph()->setUrl('http://tanlalana.com/category');
+        $this->seo()->opengraph()->addProperty('type','category');
+        $this->seo()->twitter()->setSite('@gomugoomuno');
+        $this->seo()->jsonLd()->setType('category');
+
         return view('web.category',$data);
     }
 
     public function detail($id){
         $data['link']='home';
         $data['row']=Artikel::detailData(Crypt::decryptString($id));
+
+        $this->seo()->setTitle($data['row']['judul']);
+        $this->seo()->setDescription('Artikel Mengenai Crypto dan fintech');
+        $this->seo()->opengraph()->setUrl('http://tanlalana.com');
+        $this->seo()->opengraph()->addProperty('type',$data['row']['kategori_artikel']);
+        $this->seo()->twitter()->setSite('@gomugoomuno');
+        $this->seo()->jsonLd()->setType($data['row']['kategori_artikel']);
+
         return view('web.blog-detail',$data);
 
     }
