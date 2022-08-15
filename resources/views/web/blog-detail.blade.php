@@ -1,6 +1,31 @@
 @extends('web.tema.content')
 @section('content')
 
+@push('css')
+    <style>
+        h1{
+            color: rgb(255, 0, 0)
+        }
+        h2{
+            color: rgb(255, 0, 0)
+        }
+        h3{
+            color: rgb(255, 0, 0)
+        }
+        h4{
+            color: rgb(255, 0, 0)
+        }
+        h5{
+            color: rgb(255, 0, 0)
+        }
+        h6{
+            color: rgb(255, 0, 0)
+        }
+        ul li{
+            color: white
+        }
+    </style>
+@endpush
 
   <!-- Blog Details Section Begin -->
 <section class="blog-details spad">

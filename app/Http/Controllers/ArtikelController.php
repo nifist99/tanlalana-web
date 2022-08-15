@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Crypt;
 class ArtikelController extends Controller
 {
     public function index(){
-        $data['list']=Artikel::listData();
+        $data['list']=Artikel::listDataAdmin();
         $data['name']='Artikel';
         $data['link']='artikel';
         $data['no']  =1;

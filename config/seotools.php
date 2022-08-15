@@ -38,7 +38,7 @@ return [
         'defaults' => [
             'title'       => 'Tanlalana website', // set false to total remove
             'description' => 'FTutorial programming dan komputer', // set false to total remove
-            'url'         => url('/'), // Set null for using Url::current(), set false to total remove
+            'url'         => null, // Set null for using Url::current(), set false to total remove
             'type'        => 'blog',
             'site_name'   => 'Tanlalana website',
             'images'      => [],
@@ -60,7 +60,7 @@ return [
         'defaults' => [
             'title'       => 'Tanlalana website', // set false to total remove
             'description' => 'FTutorial programming dan komputer', // set false to total remove
-            'url'         => url('/'), // Set null for using Url::current(), set false to total remove
+            'url'         => null, // Set null for using Url::current(), set false to total remove
             'type'        => 'blog',
             'images'      => [],
         ],

@@ -22,6 +22,7 @@ class CreateArtikelTable extends Migration
             $table->string('status');
             $table->string('foto');
             $table->date('tanggal');
+            $table->string('type');
             $table->integer('created_by');
             $table->integer('updated_by')->nullable();
             $table->timestamps();
